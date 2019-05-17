@@ -12,7 +12,7 @@
       <img class="tsuru" src="../assets/img/tsuru.gif" alt="">
       <div class="lines"></div>
       <div class="noise"></div>
-      <div class="message" data-splitting>BIENVENIDO</div>
+      <div class="message" data-splitting>WELCOME</div>
       <div class="time"></div>
       <div class="counter"></div>
     </div>
@@ -31,32 +31,34 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .screen {
-  @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
-
-  .info {
-    padding: 1%;
-    right: 5%;
-    top: 20%;
-    position: absolute;
-    background-color: red;
-    width: 40%;
-    height: 60%;
-    display: grid;
-    font-size: 0.8em;
-    align-items: center;
-    justify-items: center;
-  }
   .main {
     position: relative;
     font-family: 'Press Start 2P', cursive;
     color: #fff;
-    font-size: 100%;
     width: 80vw;
     height: 60vmax;
     max-height: 60vh;
     background: #193095;
     z-index: -1000;
     min-width: 300px;
+
+    @media screen and (max-width: 320px) {
+      width: 100%;
+    }
+
+    .info {
+      padding: 1%;
+      right: 5%;
+      top: 20%;
+      position: absolute;
+      background: #152771;
+      width: 40%;
+      height: 60%;
+      display: grid;
+      font-size: 0.8em;
+      align-items: center;
+      justify-items: center;
+    }
   }
   .tsuru {
     position:absolute;

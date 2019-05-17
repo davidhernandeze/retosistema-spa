@@ -19,6 +19,7 @@ export default {
   $bg: #333;
   $push-color: hsla(10, 90%, 40%, 1);
   $push-size: 50px;
+  margin-bottom: 5px;
   .button {
     position: relative;
     display: inline-block;

@@ -39,6 +39,7 @@ export default {
     background: #193095;
     z-index: 1000;
     min-width: 300px;
+    border-radius: 4%;
 
     @media screen and (max-width: 320px) {
       width: 100%;
@@ -69,6 +70,7 @@ export default {
     overflow: hidden;
     pointer-events: none;
     opacity: 1;
+    border-radius: 4%;
   }
 
   .noise:before {
@@ -82,6 +84,7 @@ export default {
     pointer-events: none;
     will-change: background-position;
     animation: noise 1s infinite alternate;
+    border-radius: 4%;
   }
 
   .lines {
@@ -92,6 +95,7 @@ export default {
     opacity: 0.6;
     will-change: opacity;
     animation: opacity 3s linear infinite;
+    border-radius: 4%;
 
     &:before {
       content: '';
@@ -105,6 +109,7 @@ export default {
       background-size: 100% 4px;
       will-change: background, background-size;
       animation: scanlines 0.2s linear infinite;
+      border-radius: 4%;
     }
   }
 

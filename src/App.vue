@@ -1,10 +1,8 @@
 <template>
   <div id="app">
-    <div class="background">
-      <div class="image"></div>
-    </div>
+    <div class="background"></div>
     <div class="header">
-      <div class="neon">retrosistema</div>
+      <div class="neon">retrosistema<span class="com">.com</span></div>
     </div>
     <div class="body">
       <div class="menu">
@@ -34,11 +32,11 @@ export default {
 </script>
 <style lang="scss">
 html, body {
-  background-color: #272a35;
   margin: 0;
   height: 100%;
+  overflow: hidden;
 }
-.background {
+
   @keyframes zoom {
     from {
       transform: scale(1);
@@ -50,16 +48,34 @@ html, body {
     }
   }
 
-  .image {
+@font-face {
+  font-family: "neon";
+  src: url('./assets/fonts/chicago/ChicagoFlat.ttf');
+}
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+#app {
+  position: relative;
+  height: 100%;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  display: grid;
+  grid-template-rows: 100px auto;
+  grid-gap: 20px;
+
+  .background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: red url('http://unsplash.it/1500/1500?random');
+    background: red url('https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80');
     background-size: cover;
-    transform: scale(1.1);
+    transform: scale(1);
     background-blend-mode: hard-light;
+    z-index: -1000;
 
     &::before,
     &::after {
@@ -68,7 +84,7 @@ html, body {
       left: 0px;
       width: 100%;
       height: 100%;
-      background: blue url('http://unsplash.it/1500/1500?random');
+      background: blue url('https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80');
       background-size: cover;
       content: '';
       mix-blend-mode: difference;
@@ -91,22 +107,6 @@ html, body {
       animation-delay: .5s;
     }
   }
-}
-@font-face {
-  font-family: "neon";
-  src: url('./assets/fonts/chicago/ChicagoFlat.ttf');
-}
-@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
-#app {
-  height: 100%;
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  display: grid;
-  grid-template-rows: 100px auto;
-  grid-gap: 20px;
 
   .header {
     .neon {
@@ -118,6 +118,10 @@ html, body {
     }
     .neon {
       animation: neon 5s ease infinite;
+
+      .com {
+        font-size: 0.5em;
+      }
     }
 
     @keyframes neon {

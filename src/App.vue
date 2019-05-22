@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <div class="background">
+      <div class="image"></div>
+    </div>
     <div class="header">
       <div class="neon">retrosistema</div>
     </div>
@@ -7,15 +10,15 @@
       <div class="menu">
         <div class="option">
           <arcade-button></arcade-button>
-          <span class="label">HOME</span>
+          <span class="label">INICIO</span>
         </div>
         <div class="option">
           <arcade-button></arcade-button>
-          <span class="label">EVENTS</span>
+          <span class="label">EVENTOS</span>
         </div>
         <div class="option">
           <arcade-button></arcade-button>
-          <span class="label">STORE</span>
+          <span class="label">TIENDA</span>
         </div>
       </div>
       <screen></screen>
@@ -30,8 +33,64 @@ export default {
 }
 </script>
 <style lang="scss">
-body {
-  background-color: #1e1e1e;
+html, body {
+  background-color: #272a35;
+  margin: 0;
+  height: 100%;
+}
+.background {
+  @keyframes zoom {
+    from {
+      transform: scale(1);
+    }
+
+    to {
+      transform: scale(1.1);
+      filter: brightness(150%);
+    }
+  }
+
+  .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: red url('http://unsplash.it/1500/1500?random');
+    background-size: cover;
+    transform: scale(1.1);
+    background-blend-mode: hard-light;
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      background: blue url('http://unsplash.it/1500/1500?random');
+      background-size: cover;
+      content: '';
+      mix-blend-mode: difference;
+      background-blend-mode: hard-light;
+    }
+
+    &::before {
+      animation-name: zoom;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+
+    &::after {
+      animation-name: zoom;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      background-blend-mode: hard-light;
+      animation-delay: .5s;
+    }
+  }
 }
 @font-face {
   font-family: "neon";
@@ -39,17 +98,17 @@ body {
 }
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
 #app {
+  height: 100%;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   display: grid;
-  grid-template-areas: 'header'
-                        'body';
+  grid-template-rows: 100px auto;
+  grid-gap: 20px;
 
   .header {
-    grid-area: header;
     .neon {
       font-family: neon;
       color: #41b883;
@@ -75,11 +134,10 @@ body {
   }
   .body {
     display: grid;
-    grid-area: body;
-    grid-gap: 10px;
     justify-items: center;
     .menu {
       display: grid;
+      align-items: center;
       grid-template-columns: auto auto auto;
       column-gap: 50px;
 

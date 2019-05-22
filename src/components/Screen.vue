@@ -12,9 +12,7 @@
       <img class="tsuru" src="../assets/img/tsuru.gif" alt="">
       <div class="lines"></div>
       <div class="noise"></div>
-      <div class="message" data-splitting>WELCOME</div>
-      <div class="time"></div>
-      <div class="counter"></div>
+      <div class="message" data-splitting>BIENVENIDO</div>
     </div>
   </div>
 </template>
@@ -35,11 +33,11 @@ export default {
     position: relative;
     font-family: 'Press Start 2P', cursive;
     color: #fff;
-    width: 80vw;
+    width: 70vw;
     height: 60vmax;
     max-height: 60vh;
     background: #193095;
-    z-index: -1000;
+    z-index: 1000;
     min-width: 300px;
 
     @media screen and (max-width: 320px) {
@@ -68,15 +66,9 @@ export default {
   }
 
   .noise {
-    position: absolute;
-    top: 0;
-    left: 0;
     overflow: hidden;
-    z-index: 400;
-    opacity: 0.8;
     pointer-events: none;
     opacity: 1;
-    z-index: 450;
   }
 
   .noise:before {
@@ -97,7 +89,6 @@ export default {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    z-index: 300;
     opacity: 0.6;
     will-change: opacity;
     animation: opacity 3s linear infinite;

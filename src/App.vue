@@ -71,7 +71,7 @@ html, body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: red url('https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80');
+    background: red url('./assets/img/arcades.jpg');
     background-size: cover;
     transform: scale(1);
     background-blend-mode: hard-light;
@@ -84,7 +84,7 @@ html, body {
       left: 0px;
       width: 100%;
       height: 100%;
-      background: blue url('https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80');
+      background: blue url('./assets/img/arcades.jpg');
       background-size: cover;
       content: '';
       mix-blend-mode: difference;

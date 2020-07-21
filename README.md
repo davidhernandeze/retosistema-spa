@@ -1,4 +1,7 @@
-# retrosistema-spa
+# retrosistema
+
+Basic landing page for Retrosistema band.
+
 
 ## Project setup
 ```
